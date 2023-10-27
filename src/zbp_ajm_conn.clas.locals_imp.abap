@@ -235,8 +235,6 @@ CLASS lhc_connection IMPLEMENTATION.
         CLEAR failed_record.
 
         failed_record-%tky = connection-%tky.
-        failed_record-%tky = connection-%tky.
-
         APPEND failed_Record TO failed-connection.
 
       ENDIF.
