@@ -49,6 +49,9 @@ authorization master ( global )
   {
     field AirportFromID affects field CityFrom,
                                 field CountryFrom;
+
+    field AirportToID affects field CityTo,
+                              field CountryTo;
   }
 
 

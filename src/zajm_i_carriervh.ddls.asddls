@@ -10,3 +10,5 @@ define view Zajm_I_CarrierVH
       @UI.lineItem: [{position: 20 }]
       name       as Name
 }
+
+

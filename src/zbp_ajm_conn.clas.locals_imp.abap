@@ -179,13 +179,14 @@ CLASS lhc_connection IMPLEMENTATION.
         failed_record-%tky = connection-%tky.
         APPEND failed_record TO failed-connection.
 
-        CONTINUE.
+        "CONTINUE.
       ENDIF.
 
+      "IF connection-AirportFromID IS NOT INITIAL.
       SELECT SINGLE
         FROM /DMO/I_Airport
       FIELDS @abap_true
-       WHERE AirportID = @connection-AirportFromID
+       WHERE AirportID EQ @connection-AirportFromID
         INTO @DATA(exists).
       IF exists = abap_false.
         message = me->new_message(
@@ -209,7 +210,10 @@ CLASS lhc_connection IMPLEMENTATION.
         APPEND failed_Record TO failed-connection.
 
       ENDIF.
+      "ENDIF.
 
+
+      "IF connection-AirportToID IS NOT INITIAL.
       SELECT SINGLE
         FROM /DMO/I_Airport
       FIELDS @abap_true
@@ -238,6 +242,7 @@ CLASS lhc_connection IMPLEMENTATION.
         APPEND failed_Record TO failed-connection.
 
       ENDIF.
+      "ENDIF.
     ENDLOOP.
 
 
@@ -312,13 +317,13 @@ CLASS lhc_connection IMPLEMENTATION.
       SELECT SINGLE
         FROM /DMO/I_Airport
       FIELDS city, CountryCode
-       WHERE AirportID = @connection-AirportFromID
+       WHERE AirportID EQ @connection-AirportFromID
         INTO ( @connection-CityFrom, @connection-CountryFrom ).
 
       SELECT SINGLE
         FROM /DMO/I_Airport
       FIELDS city, CountryCode
-       WHERE AirportID = @connection-AirportToID
+       WHERE AirportID EQ @connection-AirportToID
         INTO ( @connection-CityTo, @connection-CountryTo ).
 
       MODIFY connections FROM connection.
