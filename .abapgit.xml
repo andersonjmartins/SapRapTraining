@@ -14,7 +14,7 @@
     <item>/.gitlab-ci.yml</item>
     <item>/abaplint.json</item>
     <item>/azure-pipelines.yml</item>
-    <item>/.SUSH</item>
+    <item>/.sush.xml</item>
    </IGNORE>
   </DATA>
  </asx:values>
