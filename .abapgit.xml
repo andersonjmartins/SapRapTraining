@@ -15,6 +15,7 @@
     <item>/abaplint.json</item>
     <item>/azure-pipelines.yml</item>
     <item>*.sush.xml</item>
+    <item>/*.sush.xml</item>
    </IGNORE>
   </DATA>
  </asx:values>
